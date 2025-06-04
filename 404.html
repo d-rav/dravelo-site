@@ -4,19 +4,15 @@
     <meta charset="utf-8">
     <title>Daniel Ravelo - Redirecting...</title>
     <script type="text/javascript">
-        // Single Page Apps for GitHub Pages
-        // MIT License
-        // https://github.com/rafgraph/spa-github-pages
-        var pathSegmentsToKeep = 1;
-
-        var l = window.location;
-        l.replace(
-            l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-            l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-            l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-            (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-            l.hash
-        );
+        // Replace 'example.com' with your actual domain
+        var domain = 'www.dravelo.com';
+        var path = window.location.pathname;
+        var hash = window.location.hash;
+        
+        // If we're not at the root, redirect to root with hash
+        if (path !== '/') {
+            window.location.replace('https://' + domain + '/' + (hash || ''));
+        }
     </script>
 </head>
 <body>
